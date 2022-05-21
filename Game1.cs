@@ -30,6 +30,7 @@ namespace Incompetence
         Texture2D playerUp;
         Texture2D playerLeft;
         Texture2D playerRight;
+        Texture2D heart;
 
         Texture2D potionRed;
         Texture2D potionBlue;
@@ -82,6 +83,8 @@ namespace Incompetence
             player.animations[1] = new SpriteAnimation(playerUp, 4, 8);
             player.animations[2] = new SpriteAnimation(playerLeft, 4, 8);
             player.animations[3] = new SpriteAnimation(playerRight, 4, 10);
+
+            heart = Content.Load<Texture2D>("heart");
 
             Item.items.Add(new PotionRed(new Vector2(138, 68)));
             Item.items.Add(new PotionBlue(new Vector2(170, 100)));
@@ -179,7 +182,10 @@ namespace Incompetence
                 _spriteBatch.Draw(spriteToDraw, it.Position, Color.White);
             }
 
-
+            for (int i = 0; i < player.Health; i++)
+            {
+                _spriteBatch.Draw(heart, new Vector2(this.camera.Position.X - _graphics.PreferredBackBufferWidth / 2 + i * 45, this.camera.Position.Y - _graphics.PreferredBackBufferHeight / 2), Color.White);
+            }
 
             //to see the borders
 

@@ -1,7 +1,0 @@
-*.xnb
-*.exe
-*.dll
-*.cache
-*.pdb
-obj/**
-obj/Debug/netcoreapp3.1/**
