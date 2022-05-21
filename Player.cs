@@ -11,6 +11,10 @@ namespace Incompetence
         private int speed = 200;
         private Direction direction = Direction.Down;
         private bool isMoving = false;
+
+        public bool isHit = false;
+        public Direction hitDirection;
+
         private int radius = 16;
         public float cameraZoom = 1;
         private int health = 3;
@@ -21,6 +25,7 @@ namespace Incompetence
         public SpriteAnimation animation;
 
         public SpriteAnimation[] animations = new SpriteAnimation[5];
+       
         public Vector2 Position { get { return position; } }
 
         public int Health
@@ -42,6 +47,7 @@ namespace Incompetence
         public void Update(GameTime gameTime)
         {
             KeyboardState keyboardState = Keyboard.GetState();
+
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             isMoving = false;
@@ -137,6 +143,32 @@ namespace Incompetence
                         {
                             position.Y -= speed * deltaTime;
                         }
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (isHit)
+
+            {
+                switch (hitDirection)
+                {
+                    case Direction.Right:
+                        position.X -= 100;
+                        isHit = false;
+                        break;
+                    case Direction.Left:
+                        position.X += 100;
+                        isHit = false;
+                        break;
+                    case Direction.Up:
+                        position.Y -= 100;
+                        isHit = false;
+                        break;
+                    case Direction.Down:
+                        position.Y += 100;
+                        isHit = false;
                         break;
                     default:
                         break;

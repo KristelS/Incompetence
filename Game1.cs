@@ -113,6 +113,19 @@ namespace Incompetence
             foreach (EnemyMonster enemy in EnemyMonster.enemies)
             {
                 enemy.Update(gameTime, player.Position);
+
+                // kasti suurused tuleb muuta vastavaks uuele karakterile
+                Rectangle personRectangle = new Rectangle((int)player.Position.X, (int)player.Position.Y, 32, 32);
+                Rectangle monsterRectangle = new Rectangle((int)enemy.Position.X - 16, (int)enemy.Position.Y - 16, 48, 48);
+
+                if (personRectangle.Intersects(monsterRectangle))
+                {
+                    // this is an amazing implementation of knockback
+                    player.isHit = true;
+                    player.hitDirection = enemy.Direction;
+                    
+                    player.Health--;
+                }
             }
 
             Bomb.bombs.RemoveAll(b => b.state == 2);
@@ -158,8 +171,7 @@ namespace Incompetence
                 else
                     spriteToDraw = potionRed;
 
-
-                _spriteBatch.Draw(spriteToDraw, enemy.Position, Color.White);
+                _spriteBatch.Draw(spriteToDraw, new Vector2(enemy.Position.X - 16, enemy.Position.Y - 16), Color.White);
             }
 
             foreach (Item it in Item.items)
