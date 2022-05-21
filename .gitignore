@@ -1,11 +1,7 @@
-
-.vs/Incompetence/v16/.suo
-*.dll
-bin/Debug/netcoreapp3.1/Incompetence.runtimeconfig.dev.json
-bin/Debug/netcoreapp3.1/Incompetence.pdb
-bin/Debug/netcoreapp3.1/Incompetence.exe
-Content/bin/DesktopGL/Content/aa.xnb
 *.xnb
-Content/obj/DesktopGL/Content/.mgstats
+*.exe
+*.dll
 *.cache
-obj/Debug/netcoreapp3.1/Incompetence.assets.cache
+*.pdb
+obj/**
+obj/Debug/netcoreapp3.1/**
