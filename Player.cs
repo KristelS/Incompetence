@@ -13,6 +13,7 @@ namespace Incompetence
         private bool isMoving = false;
         private int radius = 16;
         public float cameraZoom = 1;
+        private int health = 3;
 
         private static readonly TimeSpan intervalBetweenPressed1 = TimeSpan.FromMilliseconds(3000);
         private TimeSpan lastTimePressed;
@@ -21,6 +22,13 @@ namespace Incompetence
 
         public SpriteAnimation[] animations = new SpriteAnimation[5];
         public Vector2 Position { get { return position; } }
+
+        public int Health
+        {
+            get { return health; }
+            set { health = value; }
+        }
+
         public int Radius { get { return radius; } }
         public void setX(float newX)
         {
