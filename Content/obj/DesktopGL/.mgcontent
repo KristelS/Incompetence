@@ -5,8 +5,36 @@
   <Config />
   <SourceFiles>
     <File>D:/jamjam/Incompetence/Content/aa.jpg</File>
+    <File>D:/jamjam/Incompetence/Content/bomb.png</File>
+    <File>D:/jamjam/Incompetence/Content/bomb_sprite_sheet.png</File>
+    <File>D:/jamjam/Incompetence/Content/bombflash.png</File>
+    <File>D:/jamjam/Incompetence/Content/FirstBaseMap.png</File>
+    <File>D:/jamjam/Incompetence/Content/maincharrunright.png</File>
+    <File>D:/jamjam/Incompetence/Content/player.png</File>
+    <File>D:/jamjam/Incompetence/Content/playerDown.png</File>
+    <File>D:/jamjam/Incompetence/Content/playerLeft.png</File>
+    <File>D:/jamjam/Incompetence/Content/playerRight.png</File>
+    <File>D:/jamjam/Incompetence/Content/playerUp.png</File>
+    <File>D:/jamjam/Incompetence/Content/potionBlue.png</File>
+    <File>D:/jamjam/Incompetence/Content/potionGreen.png</File>
+    <File>D:/jamjam/Incompetence/Content/potionRed.png</File>
+    <File>D:/jamjam/Incompetence/Content/tutmonster.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

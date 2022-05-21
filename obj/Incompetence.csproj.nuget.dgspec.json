@@ -40,13 +40,25 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Comora": {
+              "target": "Package",
+              "version": "[0.5.0, )"
+            },
             "MonoGame.Content.Builder.Task": {
               "target": "Package",
               "version": "[3.8.0.1641, )"
             },
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
             "MonoGame.Framework.DesktopGL": {
               "target": "Package",
               "version": "[3.8.0.1641, )"
+            },
+            "MonoGame.Framework.Portable": {
+              "target": "Package",
+              "version": "[3.6.0.1625, )"
             }
           },
           "imports": [
