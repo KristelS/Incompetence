@@ -10,8 +10,10 @@ namespace Incompetence
         private Vector2 position = new Vector2(500+320, 300+320);
         private int speed = 200;
         private Direction direction = Direction.Down;
-        public bool isMoving = false;
 
+        public bool isMoving = false;
+        public float timer;
+      
         public bool isHit = false;
         public bool isDead = false;
         public Direction hitDirection;
@@ -150,26 +152,31 @@ namespace Incompetence
                     }
                 }
 
-            if (isHit)
+                timer -= deltaTime;
+                if (isHit)
 
             {
                 switch (hitDirection)
                 {
                     case Direction.Right:
-                        position.X -= 100;
+                            if (!Obstacle.didCollide(new Vector2(position.X - 35, position.Y)) && !Obstacle.didCollide(new Vector2(position.X - 70, position.Y)) && position.X - 35 < 928 + 332 && position.X - 70 < 928 + 332)
+                                position.X -= 80;
                         isHit = false;
                         break;
                     case Direction.Left:
-                        position.X += 100;
-                        isHit = false;
+                            if (!Obstacle.didCollide(new Vector2(position.X + 35, position.Y)) && !Obstacle.didCollide(new Vector2(position.X + 70, position.Y)) && position.X + 35 > 320 && position.X + 70 > 320)
+                                position.X += 80;
+                            isHit = false;
                         break;
                     case Direction.Up:
-                        position.Y -= 100;
-                        isHit = false;
+                            if (!Obstacle.didCollide(new Vector2(position.X , position.Y - 35)) && !Obstacle.didCollide(new Vector2(position.X , position.Y - 70)) && position.Y - 35 < 608 + 320 && position.Y - 70 < 608 + 320)
+                                position.Y -= 80; 
+                            isHit = false;
                         break;
                     case Direction.Down:
-                        position.Y += 100;
-                        isHit = false;
+                            if (!Obstacle.didCollide(new Vector2(position.X, position.Y + 35)) && !Obstacle.didCollide(new Vector2(position.X, position.Y + 70)) && position.Y + 35 > 320 && position.Y + 70 > 320)
+                                position.Y += 80;
+                            isHit = false;
                         break;
                     default:
                         break;
@@ -349,6 +356,7 @@ namespace Incompetence
             Obstacle.obstacles.Clear();
             Obstacle.treesBorders.Clear();
             EnemyMonster.enemies.Add(new TutorialMonster(new Vector2(590, 590)));
+            Obstacle.SpawnLevel2Obstacles();
         }
     }
 }

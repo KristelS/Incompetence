@@ -1,4 +1,4 @@
-﻿using Comora;
+using Comora;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -20,7 +20,10 @@ namespace Incompetence
     public class Game1 : Game
     {
         float timer = 3;
+        float timer2 = 1;
+        float npcSpeechTimer = 9;
         public static Color color = Color.White;
+        public static Color pcolor = Color.White;
         public static bool itemsCollectedDone = false;
         public static int itemsCollected = 0;
         public static bool isGameStarted = false;
@@ -45,6 +48,7 @@ namespace Incompetence
         Texture2D swordPlaceHolderRight;
         Texture2D swordPlaceHolderDown;
         Texture2D swordPlaceHolderLeft;
+
 
         Texture2D playerSprite;
         Texture2D playerDown;
@@ -119,11 +123,12 @@ namespace Incompetence
             gameFont = Content.Load<SpriteFont>("galleryFont");
             msgFont = Content.Load<SpriteFont>("textMsg");
 
+
             playerDown = Content.Load<Texture2D>("main_forward");
             playerUp = Content.Load<Texture2D>("mainback");
             playerLeft = Content.Load<Texture2D>("main_left");
             playerRight = Content.Load<Texture2D>("main_right");
-            playerSprite = Content.Load<Texture2D>("playerRight");
+            playerSprite = Content.Load<Texture2D>("player");
             player.animations[0] = new SpriteAnimation(playerDown, 3, 10);
             player.animations[1] = new SpriteAnimation(playerUp, 3, 10);
             player.animations[2] = new SpriteAnimation(playerLeft, 3, 10);
@@ -138,6 +143,8 @@ namespace Incompetence
             Teleport.teleports.Add(new TeleportTutBoss(new Vector2(500 + 320, 30 + 320)));
 
             Obstacle.SpawnObstacles();
+
+            
             foreach (Obstacle tree in Obstacle.obstacles)
             {
                 if (tree.GetType() == typeof(Tree))
@@ -185,6 +192,8 @@ namespace Incompetence
                 bomb.Update(gameTime);
             }
 
+            
+
             foreach (EnemyMonster enemy in EnemyMonster.enemies)
             {
                 enemy.Update(gameTime, player.Position, player.isDead);
@@ -198,8 +207,12 @@ namespace Incompetence
                     // this is an amazing implementation of knockback
                     player.isHit = true;
                     player.hitDirection = enemy.Direction;
-                    
+                    timer2 = 2;
+                    pcolor = Color.Red;
                     player.Health--;
+
+                    
+                    
                 }
             }
 
@@ -214,8 +227,7 @@ namespace Incompetence
                    player.Health = 3;
 
                    player.isDead = false;
-                }
-                
+                }    
             }
             //end of dirty solutions, for more see draw
 
@@ -264,7 +276,10 @@ namespace Incompetence
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            timer2 -= dt;
+            if (timer2 < 1.8)
+                pcolor = Color.White;
             // TODO: Add your drawing code here
             _spriteBatch.Begin(this.camera);
 
@@ -408,6 +423,28 @@ namespace Incompetence
             //        spriteToDraw = bombflash;
             //    _spriteBatch.Draw(spriteToDraw, o.Position, Color.White);
             //}
+
+
+            //NPC!
+            if (isGameStarted)
+            {
+                _spriteBatch.Draw(playerSprite, new Vector2(27 * 32, 20 * 32), Color.White);
+                npcSpeechTimer -= dt;
+                if (npcSpeechTimer < 8 && npcSpeechTimer > 6)
+                {
+                    _spriteBatch.DrawString(msgFont, "Yellow there", new Vector2(27 * 32 - 20, 20 * 32 - 30), Color.Aqua);
+                }
+                if (npcSpeechTimer < 5.5 && npcSpeechTimer > 4)
+                {
+                    _spriteBatch.DrawString(msgFont, "How ya doin'?", new Vector2(27 * 32 - 10, 20 * 32 - 30), Color.Aqua);
+                }
+                if (npcSpeechTimer < 3.5 && npcSpeechTimer > 2)
+                {
+                    _spriteBatch.DrawString(msgFont, "I have a quest for you", new Vector2(27 * 32 - 0, 20 * 32 - 30), Color.Aqua);
+                }
+            }
+
+
             if (!itemsCollectedDone)
                 _spriteBatch.DrawString(gameFont, itemsCollected + " / 3", new Vector2(this.camera.Position.X -275, this.camera.Position.Y -137), color);
                 _spriteBatch.Draw(itemPreview, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
