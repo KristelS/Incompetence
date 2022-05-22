@@ -1,2 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"D:/jamjam/Incompetence/Content/deadSplash.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/deadSplash.xnb","TextureProcessor","Texture2DContent",561026,3686485,0,3131185
+"D:/jamjam/Incompetence/Content/speech.spritefont","D:/jamjam/Incompetence/Content/bin/DesktopGL/speech.xnb","FontDescriptionProcessor","SpriteFontContent",2065,21538,0,2814721

@@ -61,7 +61,7 @@ namespace Incompetence
     {
         public PotionRed(Vector2 newPos) : base(newPos)
         {
-            radius = 1;
+            radius = 2;
         }
     }
 
@@ -77,7 +77,7 @@ namespace Incompetence
     {
         public PotionGreen(Vector2 newPos) : base(newPos)
         {
-            radius = 3;
+            radius = 2;
         }
     }
 
@@ -89,4 +89,27 @@ namespace Incompetence
         }
     }
 
+    class Banana : Item
+    {
+        public Banana(Vector2 newPos) : base(newPos)
+        {
+            radius = 1;
+        }
+    }
+
+    class Ham : Item
+    {
+        public Ham(Vector2 newPos) : base(newPos)
+        {
+            radius = 1;
+        }
+    }
+
+    class Fork : Item
+    {
+        public Fork(Vector2 newPos) : base(newPos)
+        {
+            radius = 1;
+        }
+    }
 }

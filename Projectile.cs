@@ -12,7 +12,7 @@ namespace Incompetence
     class Projectile
     {
         private Vector2 position;
-        private int speed = 800;
+        private int speed = 400;
         private int radius = 15;
         protected int damage;
         private Direction direction;
