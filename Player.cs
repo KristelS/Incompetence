@@ -10,9 +10,10 @@ namespace Incompetence
         private Vector2 position = new Vector2(500+320, 300+320);
         private int speed = 200;
         private Direction direction = Direction.Down;
-        private bool isMoving = false;
+        public bool isMoving = false;
 
         public bool isHit = false;
+        public bool isDead = false;
         public Direction hitDirection;
 
         private int radius = 16;
@@ -66,10 +67,10 @@ namespace Incompetence
 
             }
 
-            if (Game1.isGameStarted)
+            if (Game1.isGameStarted && !isDead)
             {
-                isMoving = false;
 
+                isMoving = false;
                 if (keyboardState.IsKeyDown(Keys.Right))
                 {
                     direction = Direction.Right;
