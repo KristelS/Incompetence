@@ -1,2 +1,16 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"D:/jamjam/Incompetence/Content/speech.spritefont","D:/jamjam/Incompetence/Content/bin/DesktopGL/speech.xnb","FontDescriptionProcessor","SpriteFontContent",2065,21538,0,2814721
+"D:/jamjam/Incompetence/Content/Amenu.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/Amenu.xnb","TextureProcessor","Texture2DContent",8498,3686485,0,3029398
+"D:/jamjam/Incompetence/Content/banana.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/banana.xnb","TextureProcessor","Texture2DContent",273,4181,0,0036949
+"D:/jamjam/Incompetence/Content/ded_screen.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/ded_screen.xnb","TextureProcessor","Texture2DContent",6540,3686485,0,1134179
+"D:/jamjam/Incompetence/Content/fork.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/fork.xnb","TextureProcessor","Texture2DContent",255,4181,0,0027096
+"D:/jamjam/Incompetence/Content/ham.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/ham.xnb","TextureProcessor","Texture2DContent",388,4181,0,0023254
+"D:/jamjam/Incompetence/Content/MainWeapon.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/MainWeapon.xnb","TextureProcessor","Texture2DContent",734,4181,0,0022414
+"D:/jamjam/Incompetence/Content/MainWeaponDown.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/MainWeaponDown.xnb","TextureProcessor","Texture2DContent",783,4181,0,0024531
+"D:/jamjam/Incompetence/Content/MainWeaponLeft.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/MainWeaponLeft.xnb","TextureProcessor","Texture2DContent",835,4181,0,0049836
+"D:/jamjam/Incompetence/Content/MainWeaponRight.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/MainWeaponRight.xnb","TextureProcessor","Texture2DContent",877,4181,0,0030882
+"D:/jamjam/Incompetence/Content/speech.spritefont","D:/jamjam/Incompetence/Content/bin/DesktopGL/speech.xnb","FontDescriptionProcessor","SpriteFontContent",2065,21538,0,1139493
+"D:/jamjam/Incompetence/Content/textBubble.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/textBubble.xnb","TextureProcessor","Texture2DContent",1867,583285,0,0204034
+"D:/jamjam/Incompetence/Content/textbubl.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/textbubl.xnb","TextureProcessor","Texture2DContent",1107,298165,0,0166665
+"D:/jamjam/Incompetence/Content/textbubl2.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/textbubl2.xnb","TextureProcessor","Texture2DContent",4138,48057,0,0059414
+"D:/jamjam/Incompetence/Content/WeaponGrayscale.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/WeaponGrayscale.xnb","TextureProcessor","Texture2DContent",492,4181,0,0043274
+"D:/jamjam/Incompetence/Content/winscreen.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/winscreen.xnb","TextureProcessor","Texture2DContent",6422,3686485,0,1105526

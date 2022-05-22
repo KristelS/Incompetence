@@ -57,7 +57,7 @@ namespace Incompetence
         Texture2D swordPlaceHolderDown;
         Texture2D swordPlaceHolderLeft;
 
-
+        Texture2D winSplash;
         Texture2D playerSprite;
         Texture2D playerDown;
         Texture2D playerUp;
@@ -114,7 +114,7 @@ namespace Incompetence
 
             empty = Content.Load<Texture2D>("empty");
             itemPreview = Content.Load<Texture2D>("itemPreview");
-
+            winSplash = Content.Load<Texture2D>("winscreen");
             banana = Content.Load<Texture2D>("banana");
             ham = Content.Load<Texture2D>("ham");
             fork = Content.Load<Texture2D>("fork");
@@ -123,7 +123,7 @@ namespace Incompetence
 
             splashMenu = Content.Load<Texture2D>("Amenu");
             controlSplash = Content.Load<Texture2D>("controlsSplash");
-            deadSplash = Content.Load<Texture2D>("deadSplash");
+            deadSplash = Content.Load<Texture2D>("ded_screen");
 
             tree = Content.Load<Texture2D>("tree");
             tree2 = Content.Load<Texture2D>("tree2");
@@ -155,22 +155,26 @@ namespace Incompetence
             player.animations[2] = new SpriteAnimation(playerLeft, 3, 10);
             player.animations[3] = new SpriteAnimation(playerRight, 3, 10);
 
-            Item.items.Add(new PotionRed(new Vector2(20*32, 11*32)));
-            Item.items.Add(new PotionBlue(new Vector2(23*32,25*32)));
-            Item.items.Add(new PotionGreen(new Vector2(38*32,20*32)));
+            Item.items.Add(new PotionRed(new Vector2(20 * 32, 11 * 32)));
+            Item.items.Add(new PotionBlue(new Vector2(23 * 32, 25 * 32)));
+            Item.items.Add(new PotionGreen(new Vector2(38 * 32, 20 * 32)));
 
-            Item.items.Add(new Banana(new Vector2(14*32,21*32)));
-            Item.items.Add(new Ham(new Vector2(23*32,17*32)));
-            Item.items.Add(new Fork(new Vector2(34*32,19*32)));
+            Item.items.Add(new Banana(new Vector2(14 * 32, 21 * 32)));
+            Item.items.Add(new Ham(new Vector2(23 * 32, 17 * 32)));
+            Item.items.Add(new Fork(new Vector2(34 * 32, 19 * 32)));
 
             Item.items.Add(new CraftItems(new Vector2(768 + 320, 96 + 320)));
 
             SplashClass.splashes.Add(new SplashScreen(new Vector2(0, 0)));
+
+            if (player.isDead)
+                SplashClass.splashes.Add(new DeadSplash(new Vector2(0, 0)));
+
             Teleport.teleports.Add(new TeleportTutBoss(new Vector2(500 + 320, 30 + 320)));
 
             Obstacle.SpawnObstacles();
 
-            
+
             foreach (Obstacle tree in Obstacle.obstacles)
             {
                 if (tree.GetType() == typeof(Tree))
@@ -200,21 +204,21 @@ namespace Incompetence
 
             if (isGameStarted)
             {
-                
+
                 this.camera.Position = player.Position;
                 this.camera.Zoom = player.cameraZoom;
                 this.camera.Update(gameTime);
             }
             else this.camera.Position = new Vector2(640, 360);
 
-            
+
 
             foreach (Bomb bomb in Bomb.bombs)
             {
                 bomb.Update(gameTime);
             }
 
-            
+
 
             foreach (EnemyMonster enemy in EnemyMonster.enemies)
             {
@@ -233,8 +237,8 @@ namespace Incompetence
                     pcolor = Color.Red;
                     player.Health--;
 
-                    
-                    
+
+
                 }
             }
 
@@ -245,11 +249,11 @@ namespace Incompetence
                 player.isDead = true;
                 if (keyboardState.IsKeyDown(Keys.Enter))
                 {
-                   itemsCollected = 0;
-                   player.Health = 3;
+                    itemsCollected = 0;
+                    player.Health = 3;
 
-                   player.isDead = false;
-                }    
+                    player.isDead = false;
+                }
             }
             //end of dirty solutions, for more see draw
 
@@ -285,7 +289,7 @@ namespace Incompetence
             Projectile.projectiles.RemoveAll(p => p.Collided);
             EnemyMonster.enemies.RemoveAll(e => e.Health <= 0);
 
-            
+
 
             Bomb.bombs.RemoveAll(b => b.state == 2);
             Item.items.RemoveAll(i => i.IsPickedUp == true);
@@ -410,7 +414,7 @@ namespace Incompetence
                 _spriteBatch.Draw(spriteToDraw, it.Position, Color.White);
             }
 
-            
+
 
             //to see the borders
 
@@ -424,7 +428,7 @@ namespace Incompetence
             }
 
             if (mapLevel == 1)
-                _spriteBatch.Draw(tree, new Vector2(350+320, 200+320), Color.White);
+                _spriteBatch.Draw(tree, new Vector2(350 + 320, 200 + 320), Color.White);
 
 
             foreach (Obstacle o in Obstacle.obstacles)
@@ -496,12 +500,14 @@ namespace Incompetence
             }
 
 
-            if (!itemsCollectedDone)
-                _spriteBatch.DrawString(gameFont, itemsCollected + " / 3", new Vector2(this.camera.Position.X -275, this.camera.Position.Y -137), color);
-                _spriteBatch.Draw(itemPreview, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
-                _spriteBatch.Draw(swordGrayscale, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
+                if (!itemsCollectedDone)
+                {
+                    _spriteBatch.DrawString(gameFont, itemsCollected + " / 3", new Vector2(this.camera.Position.X - 275, this.camera.Position.Y - 137), color);
+                    _spriteBatch.Draw(itemPreview, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
+                    _spriteBatch.Draw(swordGrayscale, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
+                }
 
-            }
+            
 
             if (itemsCollectedDone)
             {
@@ -509,7 +515,7 @@ namespace Incompetence
                 _spriteBatch.Draw(sword, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
             }
 
-            
+
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             if (firstCollision == 1)
@@ -537,6 +543,10 @@ namespace Incompetence
                 else if (splash.GetType() == typeof(DeadSplash))
                 {
                     spriteToDraw = deadSplash;
+                }
+                else if (splash.GetType() == typeof(WinSplash))
+                {
+                    spriteToDraw = winSplash;
                 }
                 else
                     spriteToDraw = controlSplash;

@@ -55,4 +55,12 @@ namespace Incompetence
         }
     }
 
+    class WinSplash : SplashClass
+    {
+        public WinSplash(Vector2 newPos) : base(newPos)
+        {
+            radius = 3;
+        }
+    }
+
 }
