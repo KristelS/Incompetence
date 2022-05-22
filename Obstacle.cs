@@ -70,6 +70,11 @@ namespace Incompetence
             Obstacle.treesBorders.Add(new Border(new Vector2(896, 320)));
 
         }
+
+        public static void SpawnLevel2Obstacles()
+        {
+
+        }
     }
 
     class Border : Obstacle
