@@ -21,7 +21,7 @@ namespace Incompetence
     {
         float timer = 3;
         float timer2 = 1;
-        float npcSpeechTimer = 9;
+        float npcSpeechTimer = 20;
         public static Color color = Color.White;
         public static Color pcolor = Color.White;
         public static bool itemsCollectedDone = false;
@@ -41,10 +41,18 @@ namespace Incompetence
 
         Texture2D splashMenu;
         Texture2D controlSplash;
+        Texture2D deadSplash;
+
+        Texture2D banana;
+        Texture2D ham;
+        Texture2D fork;
+
+
         Texture2D tree;
         Texture2D tree2;
 
-        Texture2D swordPlaceHolder;
+        Texture2D sword;
+        Texture2D swordGrayscale;
         Texture2D swordPlaceHolderRight;
         Texture2D swordPlaceHolderDown;
         Texture2D swordPlaceHolderLeft;
@@ -57,6 +65,8 @@ namespace Incompetence
         Texture2D playerRight;
         Texture2D heart;
 
+        Texture2D textBubble;
+
         Texture2D potionRed;
         Texture2D potionBlue;
         Texture2D potionGreen;
@@ -67,6 +77,7 @@ namespace Incompetence
 
         SpriteFont gameFont;
         SpriteFont msgFont;
+        SpriteFont bubbleFont;
 
         Player player = new Player();
         Camera camera;
@@ -104,15 +115,24 @@ namespace Incompetence
             empty = Content.Load<Texture2D>("empty");
             itemPreview = Content.Load<Texture2D>("itemPreview");
 
-            splashMenu = Content.Load<Texture2D>("splash");
+            banana = Content.Load<Texture2D>("banana");
+            ham = Content.Load<Texture2D>("ham");
+            fork = Content.Load<Texture2D>("fork");
+
+            textBubble = Content.Load<Texture2D>("textbubl2");
+
+            splashMenu = Content.Load<Texture2D>("Amenu");
             controlSplash = Content.Load<Texture2D>("controlsSplash");
+            deadSplash = Content.Load<Texture2D>("deadSplash");
+
             tree = Content.Load<Texture2D>("tree");
             tree2 = Content.Load<Texture2D>("tree2");
 
-            swordPlaceHolder = Content.Load<Texture2D>("swordPlaceHolder");
-            swordPlaceHolderRight = Content.Load<Texture2D>("swordPlaceHolderRight");
-            swordPlaceHolderDown = Content.Load<Texture2D>("swordPlaceHolderDown");
-            swordPlaceHolderLeft = Content.Load<Texture2D>("swordPlaceHolderLeft");
+            sword = Content.Load<Texture2D>("MainWeapon");
+            swordGrayscale = Content.Load<Texture2D>("WeaponGrayscale");
+            swordPlaceHolderRight = Content.Load<Texture2D>("MainWeaponRight");
+            swordPlaceHolderDown = Content.Load<Texture2D>("MainWeaponDown");
+            swordPlaceHolderLeft = Content.Load<Texture2D>("MainWeaponLeft");
 
             potionRed = Content.Load<Texture2D>("potionRed");
             potionGreen = Content.Load<Texture2D>("potionGreen");
@@ -122,6 +142,7 @@ namespace Incompetence
 
             gameFont = Content.Load<SpriteFont>("galleryFont");
             msgFont = Content.Load<SpriteFont>("textMsg");
+            bubbleFont = Content.Load<SpriteFont>("speech");
 
 
             playerDown = Content.Load<Texture2D>("main_forward");
@@ -134,9 +155,14 @@ namespace Incompetence
             player.animations[2] = new SpriteAnimation(playerLeft, 3, 10);
             player.animations[3] = new SpriteAnimation(playerRight, 3, 10);
 
-            Item.items.Add(new PotionRed(new Vector2(138 + 320, 68 + 320)));
-            Item.items.Add(new PotionBlue(new Vector2(170 + 320, 100 + 320)));
-            Item.items.Add(new PotionGreen(new Vector2(202 + 320, 200 + 320)));
+            Item.items.Add(new PotionRed(new Vector2(20*32, 11*32)));
+            Item.items.Add(new PotionBlue(new Vector2(23*32,25*32)));
+            Item.items.Add(new PotionGreen(new Vector2(38*32,20*32)));
+
+            Item.items.Add(new Banana(new Vector2(14*32,21*32)));
+            Item.items.Add(new Ham(new Vector2(23*32,17*32)));
+            Item.items.Add(new Fork(new Vector2(34*32,19*32)));
+
             Item.items.Add(new CraftItems(new Vector2(768 + 320, 96 + 320)));
 
             SplashClass.splashes.Add(new SplashScreen(new Vector2(0, 0)));
@@ -160,10 +186,6 @@ namespace Incompetence
 
 
             heart = Content.Load<Texture2D>("heart");
-
-            Item.items.Add(new PotionRed(new Vector2(138, 68)));
-            Item.items.Add(new PotionBlue(new Vector2(170, 100)));
-            Item.items.Add(new PotionGreen(new Vector2(202, 200)));
 
 
             player.animation = player.animations[0];
@@ -324,7 +346,7 @@ namespace Incompetence
                         spriteToDraw = swordPlaceHolderDown;
                     }
                     else
-                        spriteToDraw = swordPlaceHolder;
+                        spriteToDraw = sword;
                 }
                 else
                     spriteToDraw = potionRed;
@@ -371,6 +393,12 @@ namespace Incompetence
                 }
                 else if (it.GetType() == typeof(PotionGreen))
                     spriteToDraw = potionGreen;
+                else if (it.GetType() == typeof(Banana))
+                    spriteToDraw = banana;
+                else if (it.GetType() == typeof(Ham))
+                    spriteToDraw = ham;
+                else if (it.GetType() == typeof(Fork))
+                    spriteToDraw = fork;
                 else if (it.GetType() == typeof(CraftItems))
                 {
                     spriteToDraw = empty;
@@ -428,19 +456,42 @@ namespace Incompetence
             //NPC!
             if (isGameStarted)
             {
-                _spriteBatch.Draw(playerSprite, new Vector2(27 * 32, 20 * 32), Color.White);
-                npcSpeechTimer -= dt;
-                if (npcSpeechTimer < 8 && npcSpeechTimer > 6)
+                if (npcSpeechTimer > 5.5)
                 {
-                    _spriteBatch.DrawString(msgFont, "Yellow there", new Vector2(27 * 32 - 20, 20 * 32 - 30), Color.Aqua);
-                }
-                if (npcSpeechTimer < 5.5 && npcSpeechTimer > 4)
-                {
-                    _spriteBatch.DrawString(msgFont, "How ya doin'?", new Vector2(27 * 32 - 10, 20 * 32 - 30), Color.Aqua);
-                }
-                if (npcSpeechTimer < 3.5 && npcSpeechTimer > 2)
-                {
-                    _spriteBatch.DrawString(msgFont, "I have a quest for you", new Vector2(27 * 32 - 0, 20 * 32 - 30), Color.Aqua);
+                    _spriteBatch.Draw(textBubble, new Vector2(this.camera.Position.X + 140, this.camera.Position.Y + 110), Color.White);
+                    npcSpeechTimer -= dt;
+                    if (npcSpeechTimer < 19.5 && npcSpeechTimer > 17)
+                    {
+                        _spriteBatch.DrawString(bubbleFont, "There's an annoying ", new Vector2(this.camera.Position.X + 170, this.camera.Position.Y + 128), Color.Black);
+                        _spriteBatch.DrawString(bubbleFont, "angel to be killed", new Vector2(this.camera.Position.X + 170, this.camera.Position.Y + 140), Color.Black);
+                    }
+                    if (npcSpeechTimer < 16.5 && npcSpeechTimer > 15)
+                    {
+                        _spriteBatch.DrawString(bubbleFont, ".. one would need ", new Vector2(this.camera.Position.X + 170, this.camera.Position.Y + 128), Color.Black);
+                        _spriteBatch.DrawString(bubbleFont, "a weapon tho.. ", new Vector2(this.camera.Position.X + 170, this.camera.Position.Y + 140), Color.Black);
+                    }
+                    if (npcSpeechTimer < 14.5 && npcSpeechTimer > 12)
+                    {
+                        _spriteBatch.DrawString(bubbleFont, "Maybe this trash ", new Vector2(this.camera.Position.X + 165, this.camera.Position.Y + 128), Color.Black);
+                        _spriteBatch.DrawString(bubbleFont, "laying around here", new Vector2(this.camera.Position.X + 165, this.camera.Position.Y + 140), Color.Black);
+                        _spriteBatch.DrawString(bubbleFont, "could be helpful? ", new Vector2(this.camera.Position.X + 165, this.camera.Position.Y + 152), Color.Black);
+                    }
+                    if (npcSpeechTimer < 11.5 && npcSpeechTimer > 10)
+                    {
+                        _spriteBatch.DrawString(bubbleFont, "Go pick up stuff ", new Vector2(this.camera.Position.X + 165, this.camera.Position.Y + 128), Color.Black);
+                        _spriteBatch.DrawString(bubbleFont, "using  [E]", new Vector2(this.camera.Position.X + 165, this.camera.Position.Y + 140), Color.Black);
+                    }
+                    if (npcSpeechTimer < 9.5 && npcSpeechTimer > 6.5)
+                    {
+                        _spriteBatch.DrawString(bubbleFont, "When you're done ", new Vector2(this.camera.Position.X + 165, this.camera.Position.Y + 128), Color.Black);
+                        _spriteBatch.DrawString(bubbleFont, "use [E] on the", new Vector2(this.camera.Position.X + 165, this.camera.Position.Y + 140), Color.Black);
+                        _spriteBatch.DrawString(bubbleFont, "Crafting Circle ", new Vector2(this.camera.Position.X + 165, this.camera.Position.Y + 152), Color.Black);
+                    }
+                    if (npcSpeechTimer < 6.5 && npcSpeechTimer > 5.5)
+                    {
+                        _spriteBatch.DrawString(bubbleFont, "Shoot enemies with ", new Vector2(this.camera.Position.X + 165, this.camera.Position.Y + 128), Color.Black);
+                        _spriteBatch.DrawString(bubbleFont, "[space]", new Vector2(this.camera.Position.X + 165, this.camera.Position.Y + 140), Color.Black);
+                    }
                 }
             }
 
@@ -448,11 +499,14 @@ namespace Incompetence
             if (!itemsCollectedDone)
                 _spriteBatch.DrawString(gameFont, itemsCollected + " / 3", new Vector2(this.camera.Position.X -275, this.camera.Position.Y -137), color);
                 _spriteBatch.Draw(itemPreview, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
+                _spriteBatch.Draw(swordGrayscale, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
+
+            }
 
             if (itemsCollectedDone)
             {
                 _spriteBatch.Draw(itemPreview, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
-                _spriteBatch.Draw(swordPlaceHolder, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
+                _spriteBatch.Draw(sword, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
             }
 
             
@@ -479,6 +533,10 @@ namespace Incompetence
                 if (splash.GetType() == typeof(SplashScreen))
                 {
                     spriteToDraw = splashMenu;
+                }
+                else if (splash.GetType() == typeof(DeadSplash))
+                {
+                    spriteToDraw = deadSplash;
                 }
                 else
                     spriteToDraw = controlSplash;

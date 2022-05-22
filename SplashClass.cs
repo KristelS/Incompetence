@@ -39,11 +39,19 @@ namespace Incompetence
         }
     }
 
-    class SplashHelp: SplashClass
+    class SplashHelp : SplashClass
     {
         public SplashHelp(Vector2 newPos) : base(newPos)
         {
             radius = 2;
+        }
+    }
+
+    class DeadSplash : SplashClass
+    {
+        public DeadSplash(Vector2 newPos) : base(newPos)
+        {
+            radius = 3;
         }
     }
 

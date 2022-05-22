@@ -113,7 +113,8 @@ namespace Incompetence
 
                 if (keyboardState.IsKeyDown(Keys.Space) && kStateOld.IsKeyUp(Keys.Space))
                 {
-                    Projectile.projectiles.Add(new Sword(position, direction));
+                    if (Game1.itemsCollectedDone)
+                        Projectile.projectiles.Add(new Sword(position, direction));
                 }
 
                 kStateOld = keyboardState;
@@ -133,7 +134,8 @@ namespace Incompetence
                             if (item.GetType() != typeof(CraftItems))
                             {
                                 Item.items.Remove(item);
-                                Game1.itemsCollected += 1;
+                                if (item.Radius == 1) //craft-item specific indenticator
+                                    Game1.itemsCollected += 1;
                                 if (Game1.itemsCollected == 3)
                                 {
                                     Game1.color = Color.Green;

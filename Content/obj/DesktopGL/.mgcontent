@@ -4,7 +4,9 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>D:/jamjam/Incompetence/Content/Amenu.png</File>
     <File>D:/jamjam/Incompetence/Content/backgroundImage.png</File>
+    <File>D:/jamjam/Incompetence/Content/banana.png</File>
     <File>D:/jamjam/Incompetence/Content/biggerTutMap.png</File>
     <File>D:/jamjam/Incompetence/Content/bomb.png</File>
     <File>D:/jamjam/Incompetence/Content/bomb_sprite_sheet.png</File>
@@ -12,7 +14,9 @@
     <File>D:/jamjam/Incompetence/Content/controlsSplash.png</File>
     <File>D:/jamjam/Incompetence/Content/deadSplash.png</File>
     <File>D:/jamjam/Incompetence/Content/empty.png</File>
+    <File>D:/jamjam/Incompetence/Content/fork.png</File>
     <File>D:/jamjam/Incompetence/Content/galleryFont.spritefont</File>
+    <File>D:/jamjam/Incompetence/Content/ham.png</File>
     <File>D:/jamjam/Incompetence/Content/heart.png</File>
     <File>D:/jamjam/Incompetence/Content/item2.png</File>
     <File>D:/jamjam/Incompetence/Content/itemPreview.png</File>
@@ -21,6 +25,10 @@
     <File>D:/jamjam/Incompetence/Content/main_right.png</File>
     <File>D:/jamjam/Incompetence/Content/mainback.png</File>
     <File>D:/jamjam/Incompetence/Content/maincharrunright.png</File>
+    <File>D:/jamjam/Incompetence/Content/MainWeapon.png</File>
+    <File>D:/jamjam/Incompetence/Content/MainWeaponDown.png</File>
+    <File>D:/jamjam/Incompetence/Content/MainWeaponLeft.png</File>
+    <File>D:/jamjam/Incompetence/Content/MainWeaponRight.png</File>
     <File>D:/jamjam/Incompetence/Content/map2.png</File>
     <File>D:/jamjam/Incompetence/Content/mapfinal.png</File>
     <File>D:/jamjam/Incompetence/Content/maphopefullyFinal.png</File>
@@ -33,19 +41,37 @@
     <File>D:/jamjam/Incompetence/Content/potionBlue.png</File>
     <File>D:/jamjam/Incompetence/Content/potionGreen.png</File>
     <File>D:/jamjam/Incompetence/Content/potionRed.png</File>
+    <File>D:/jamjam/Incompetence/Content/speech.spritefont</File>
     <File>D:/jamjam/Incompetence/Content/splash.png</File>
     <File>D:/jamjam/Incompetence/Content/swordPlaceHolder.png</File>
     <File>D:/jamjam/Incompetence/Content/swordPlaceHolderDown.png</File>
     <File>D:/jamjam/Incompetence/Content/swordPlaceHolderLeft.png</File>
     <File>D:/jamjam/Incompetence/Content/swordPlaceHolderRight.png</File>
+    <File>D:/jamjam/Incompetence/Content/textBubble.png</File>
+    <File>D:/jamjam/Incompetence/Content/textbubl.png</File>
+    <File>D:/jamjam/Incompetence/Content/textbubl2.png</File>
     <File>D:/jamjam/Incompetence/Content/textMsg.spritefont</File>
     <File>D:/jamjam/Incompetence/Content/tree.png</File>
     <File>D:/jamjam/Incompetence/Content/tree2.png</File>
     <File>D:/jamjam/Incompetence/Content/tutBosss.png</File>
     <File>D:/jamjam/Incompetence/Content/tutmonster.png</File>
     <File>D:/jamjam/Incompetence/Content/tutorialBoss.png</File>
+    <File>D:/jamjam/Incompetence/Content/WeaponGrayscale.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
