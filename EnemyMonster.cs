@@ -46,20 +46,23 @@ namespace Incompetence
             position = newPos;
         }
 
-        public void Update(GameTime gameTime, Vector2 playerPos)
+        public void Update(GameTime gameTime, Vector2 playerPos, bool isPlayerDead)
         {
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-            Vector2 moveDir = playerPos - position;
-            moveDir.Normalize();
-
-            Vector2 tempPos = position;
-
-            tempPos += moveDir * speed * dt;
-
-            if (!Obstacle.didCollide(tempPos))
+            if (!isPlayerDead)
             {
-                position += moveDir * speed * dt;
+                Vector2 moveDir = playerPos - position;
+                moveDir.Normalize();
+
+                Vector2 tempPos = position;
+
+                tempPos += moveDir * speed * dt;
+
+
+                if (!Obstacle.didCollide(tempPos))
+                {
+                    position += moveDir * speed * dt;
+                }
             }
 
             // Determine the direction of the monster

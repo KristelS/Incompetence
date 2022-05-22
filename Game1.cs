@@ -1,4 +1,4 @@
-﻿using Comora;
+using Comora;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -16,6 +16,7 @@ namespace Incompetence
         Left,
         Right
     }
+
     public class Game1 : Game
     {
         float timer = 3;
@@ -84,7 +85,7 @@ namespace Incompetence
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+            IsMouseVisible = false;
         }
 
         protected override void Initialize()
@@ -217,7 +218,7 @@ namespace Incompetence
 
             foreach (EnemyMonster enemy in EnemyMonster.enemies)
             {
-                enemy.Update(gameTime, player.Position);
+                enemy.Update(gameTime, player.Position, player.isDead);
 
                 // kasti suurused tuleb muuta vastavaks uuele karakterile
                 Rectangle personRectangle = new Rectangle((int)player.Position.X, (int)player.Position.Y, 32, 32);
@@ -237,7 +238,21 @@ namespace Incompetence
                 }
             }
 
-            
+            // Start of dirty solutions to handling death
+            if (player.Health < 1)
+            {
+                KeyboardState keyboardState = Keyboard.GetState();
+                player.isDead = true;
+                if (keyboardState.IsKeyDown(Keys.Enter))
+                {
+                   itemsCollected = 0;
+                   player.Health = 3;
+
+                   player.isDead = false;
+                }    
+            }
+            //end of dirty solutions, for more see draw
+
             foreach (Projectile proj in Projectile.projectiles)
             {
                 proj.Update(gameTime);
@@ -403,7 +418,10 @@ namespace Incompetence
 
 
             //_spriteBatch.Draw(player_Sprite, player.Position, Color.White);
-            player.animation.Draw(_spriteBatch);
+            if (player.Health > 0)
+            {
+                player.animation.Draw(_spriteBatch);
+            }
 
             if (mapLevel == 1)
                 _spriteBatch.Draw(tree, new Vector2(350+320, 200+320), Color.White);
@@ -480,14 +498,12 @@ namespace Incompetence
 
             if (!itemsCollectedDone)
                 _spriteBatch.DrawString(gameFont, itemsCollected + " / 3", new Vector2(this.camera.Position.X -275, this.camera.Position.Y -137), color);
-
-            if (!itemsCollectedDone)
-            {
                 _spriteBatch.Draw(itemPreview, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
                 _spriteBatch.Draw(swordGrayscale, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
 
             }
-            if (itemsCollectedDone) 
+
+            if (itemsCollectedDone)
             {
                 _spriteBatch.Draw(itemPreview, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
                 _spriteBatch.Draw(sword, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
