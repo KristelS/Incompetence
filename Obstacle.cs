@@ -60,6 +60,14 @@ namespace Incompetence
             Obstacle.obstacles.Add(new Tree(new Vector2(704 - 40 + 320, 512 - 135 + 320)));
             Obstacle.obstacles.Add(new Tree(new Vector2(256 - 40 + 320, 544 - 135 + 320)));
 
+            Obstacle.treesBorders.Add(new Border(new Vector2(736, 320)));
+            Obstacle.treesBorders.Add(new Border(new Vector2(736, 352)));
+            Obstacle.treesBorders.Add(new Border(new Vector2(736, 384)));
+            Obstacle.treesBorders.Add(new Border(new Vector2(768, 384)));
+            Obstacle.treesBorders.Add(new Border(new Vector2(864, 384)));
+            Obstacle.treesBorders.Add(new Border(new Vector2(896, 384)));
+            Obstacle.treesBorders.Add(new Border(new Vector2(896, 352)));
+            Obstacle.treesBorders.Add(new Border(new Vector2(896, 320)));
 
         }
     }

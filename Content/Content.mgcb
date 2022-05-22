@@ -14,19 +14,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin bomb.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:bomb.png
-
-
 #begin backgroundImage.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -52,6 +39,16 @@
 /build:biggerTutMap.png
 
 #begin bomb.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:bomb.png
 
 #begin bomb_sprite_sheet.png
 /importer:TextureImporter
@@ -77,19 +74,6 @@
 /processorParam:TextureFormat=Color
 /build:bombflash.png
 
-#begin FirstBaseMap.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:FirstBaseMap.png
-
-
 #begin controlsSplash.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -114,10 +98,14 @@
 /processorParam:TextureFormat=Color
 /build:empty.png
 
-#begin FirstBaseMap.png
+#begin galleryFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:galleryFont.spritefont
 
 #begin heart.png
-
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -128,13 +116,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:heart.png
-
-#begin galleryFont.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:galleryFont.spritefont
 
 #begin item2.png
 /importer:TextureImporter
@@ -243,6 +224,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:mapfinal.png
+
+#begin newTutBossBackground.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:newTutBossBackground.png
 
 #begin player.png
 /importer:TextureImporter

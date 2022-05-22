@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>D:/jamjam/Incompetence/Content/swordPlaceHolderLeft.png</SourceFile>
-  <SourceTime>2022-05-21T15:39:29.2942494+03:00</SourceTime>
+  <SourceTime>2022-05-22T10:21:29.9043537+03:00</SourceTime>
   <DestFile>D:/jamjam/Incompetence/Content/bin/DesktopGL/swordPlaceHolderLeft.xnb</DestFile>
-  <DestTime>2022-05-21T15:41:59.9341162+03:00</DestTime>
+  <DestTime>2022-05-22T11:03:30.2907393+03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T19:17:54+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

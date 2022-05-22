@@ -187,9 +187,9 @@ namespace Incompetence
                     {
                         case Direction.Right:
                             tempPos.X += speed * deltaTime;
-                            if (!Obstacle.didCollide(tempPos) && tempPos.X < 928 + 320)
+                            if (!Obstacle.didCollide(tempPos) && tempPos.X < 928 + 332)
                             {
-                                if (tempPos.X > 928 + 310)
+                                if (tempPos.X > 928 + 322)
                                 {
                                     if (Game1.firstCollision == 0)
                                         Game1.firstCollision = 1;

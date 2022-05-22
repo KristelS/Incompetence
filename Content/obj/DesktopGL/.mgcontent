@@ -4,7 +4,6 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/jamjam/Incompetence/Content/aa.jpg</File>
     <File>D:/jamjam/Incompetence/Content/backgroundImage.png</File>
     <File>D:/jamjam/Incompetence/Content/biggerTutMap.png</File>
     <File>D:/jamjam/Incompetence/Content/bomb.png</File>
@@ -12,8 +11,8 @@
     <File>D:/jamjam/Incompetence/Content/bombflash.png</File>
     <File>D:/jamjam/Incompetence/Content/controlsSplash.png</File>
     <File>D:/jamjam/Incompetence/Content/empty.png</File>
-    <File>D:/jamjam/Incompetence/Content/FirstBaseMap.png</File>
     <File>D:/jamjam/Incompetence/Content/galleryFont.spritefont</File>
+    <File>D:/jamjam/Incompetence/Content/heart.png</File>
     <File>D:/jamjam/Incompetence/Content/item2.png</File>
     <File>D:/jamjam/Incompetence/Content/itemPreview.png</File>
     <File>D:/jamjam/Incompetence/Content/main_forward.png</File>
@@ -23,6 +22,7 @@
     <File>D:/jamjam/Incompetence/Content/maincharrunright.png</File>
     <File>D:/jamjam/Incompetence/Content/map2.png</File>
     <File>D:/jamjam/Incompetence/Content/mapfinal.png</File>
+    <File>D:/jamjam/Incompetence/Content/newTutBossBackground.png</File>
     <File>D:/jamjam/Incompetence/Content/player.png</File>
     <File>D:/jamjam/Incompetence/Content/playerDown.png</File>
     <File>D:/jamjam/Incompetence/Content/playerLeft.png</File>
@@ -42,21 +42,6 @@
     <File>D:/jamjam/Incompetence/Content/tutBosss.png</File>
     <File>D:/jamjam/Incompetence/Content/tutmonster.png</File>
     <File>D:/jamjam/Incompetence/Content/tutorialBoss.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bomb.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bomb_sprite_sheet.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bombflash.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/FirstBaseMap.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/heart.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/maincharrunright.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/player.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/playerDown.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/playerLeft.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/playerRight.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/playerUp.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/potionBlue.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/potionGreen.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/potionRed.png</File>
-    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/tutmonster.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

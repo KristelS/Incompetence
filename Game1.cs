@@ -132,7 +132,7 @@ namespace Incompetence
             Item.items.Add(new CraftItems(new Vector2(768 + 320, 96 + 320)));
 
             SplashClass.splashes.Add(new SplashScreen(new Vector2(0, 0)));
-            Teleport.teleports.Add(new TeleportTutBoss(new Vector2(480 + 320, 64 + 320)));
+            Teleport.teleports.Add(new TeleportTutBoss(new Vector2(500 + 320, 30 + 320)));
 
             Obstacle.SpawnObstacles();
             foreach (Obstacle tree in Obstacle.obstacles)
@@ -348,10 +348,7 @@ namespace Incompetence
                 _spriteBatch.Draw(spriteToDraw, it.Position, Color.White);
             }
 
-            for (int i = 0; i < player.Health; i++)
-            {
-                _spriteBatch.Draw(heart, new Vector2(this.camera.Position.X - _graphics.PreferredBackBufferWidth / 2 + i * 45, this.camera.Position.Y - _graphics.PreferredBackBufferHeight / 2), Color.White);
-            }
+            
 
             //to see the borders
 
@@ -370,7 +367,7 @@ namespace Incompetence
                 Texture2D spriteToDraw;
                 if (o.GetType() == typeof(Nothing))
                 {
-                    spriteToDraw = bombb;
+                    spriteToDraw = empty;
                 }
                 else if (o.GetType() == typeof(Tree2))
                 {
@@ -390,17 +387,17 @@ namespace Incompetence
             //    _spriteBatch.Draw(spriteToDraw, o.Position, Color.White);
             //}
             if (!itemsCollectedDone)
-                _spriteBatch.DrawString(gameFont, itemsCollected + " / 3", new Vector2(this.camera.Position.X -280, this.camera.Position.Y -150), color);
+                _spriteBatch.DrawString(gameFont, itemsCollected + " / 3", new Vector2(this.camera.Position.X -275, this.camera.Position.Y -137), color);
 
             if (!itemsCollectedDone)
             {
-                _spriteBatch.Draw(itemPreview, new Vector2(this.camera.Position.X - 320, this.camera.Position.Y - 148), Color.White);
+                _spriteBatch.Draw(itemPreview, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
                 
             }
             if (itemsCollectedDone)
             {
-                _spriteBatch.Draw(itemPreview, new Vector2(this.camera.Position.X - 320, this.camera.Position.Y - 148), Color.White);
-                _spriteBatch.Draw(swordPlaceHolder, new Vector2(this.camera.Position.X - 320, this.camera.Position.Y - 148), Color.White);
+                _spriteBatch.Draw(itemPreview, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
+                _spriteBatch.Draw(swordPlaceHolder, new Vector2(this.camera.Position.X - 315, this.camera.Position.Y - 135), Color.White);
             }
 
             
@@ -412,6 +409,11 @@ namespace Incompetence
                 timer -= deltaTime;
                 if (timer < 1)
                     firstCollision = 2;
+            }
+
+            for (int i = 0; i < player.Health; i++)
+            {
+                _spriteBatch.Draw(heart, new Vector2(this.camera.Position.X - 315 + i * 45, this.camera.Position.Y - 177), Color.White);
             }
 
             //add here a picture instead of the new item

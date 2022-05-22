@@ -28,3 +28,4 @@ D:\jamjam\Incompetence\bin\Debug\netcoreapp3.1\MonoGame.Extended.Graphics.dll
 D:\jamjam\Incompetence\bin\Debug\netcoreapp3.1\MonoGame.Extended.Tiled.dll
 D:\jamjam\Incompetence\bin\Debug\netcoreapp3.1\MonoGame.Framework.Content.Pipeline.dll
 D:\jamjam\Incompetence\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\jamjam\Incompetence\bin\Debug\netcoreapp3.1\Content\heart.xnb

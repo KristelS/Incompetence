@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>D:/jamjam/Incompetence/Content/empty.png</SourceFile>
-  <SourceTime>2022-05-21T22:59:51.0322843+03:00</SourceTime>
+  <SourceTime>2022-05-22T10:21:29.8395268+03:00</SourceTime>
   <DestFile>D:/jamjam/Incompetence/Content/bin/DesktopGL/empty.xnb</DestFile>
-  <DestTime>2022-05-21T23:00:22.4041758+03:00</DestTime>
+  <DestTime>2022-05-22T11:03:29.5049887+03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T19:17:54+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
