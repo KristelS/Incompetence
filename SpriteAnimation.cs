@@ -27,7 +27,7 @@ namespace Incompetence
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Texture, Position, Rectangles[FrameIndex], Color, Rotation, Origin, Scale, SpriteEffect, 0f);
+            spriteBatch.Draw(Texture, Position, Rectangles[FrameIndex], Game1.pcolor, Rotation, Origin, Scale, SpriteEffect, 0f);
         }
     }
 

@@ -10,6 +10,7 @@
     <File>D:/jamjam/Incompetence/Content/bomb_sprite_sheet.png</File>
     <File>D:/jamjam/Incompetence/Content/bombflash.png</File>
     <File>D:/jamjam/Incompetence/Content/controlsSplash.png</File>
+    <File>D:/jamjam/Incompetence/Content/deadSplash.png</File>
     <File>D:/jamjam/Incompetence/Content/empty.png</File>
     <File>D:/jamjam/Incompetence/Content/galleryFont.spritefont</File>
     <File>D:/jamjam/Incompetence/Content/heart.png</File>
@@ -45,6 +46,7 @@
     <File>D:/jamjam/Incompetence/Content/tutorialBoss.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
