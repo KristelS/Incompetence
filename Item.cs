@@ -81,4 +81,12 @@ namespace Incompetence
         }
     }
 
+    class CraftItems : Item
+    {
+        public CraftItems(Vector2 newPos) : base(newPos)
+        {
+            radius = 50;
+        }
+    }
+
 }

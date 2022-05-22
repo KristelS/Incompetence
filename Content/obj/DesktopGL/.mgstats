@@ -1,2 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"D:/jamjam/Incompetence/Content/tutmonster.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/tutmonster.xnb","TextureProcessor","Texture2DContent",1531,4181,0,1896699
+"D:/jamjam/Incompetence/Content/main_left.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/main_left.xnb","TextureProcessor","Texture2DContent",1811,18517,0,1789494
+"D:/jamjam/Incompetence/Content/main_right.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/main_right.xnb","TextureProcessor","Texture2DContent",1875,18517,0,0040626

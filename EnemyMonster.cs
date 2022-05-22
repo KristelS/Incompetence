@@ -62,7 +62,7 @@ namespace Incompetence
         public TutorialMonster(Vector2 newPos) : base(newPos)
         {
             speed = 50;
-            health = 30;
+            health = 10;
         }
     }
 
