@@ -13,6 +13,7 @@ namespace Incompetence
     class EnemyMonster
     {
         private Vector2 position;
+        private Direction direction;
         protected int health;
         protected int speed;
         protected int radius;
@@ -28,6 +29,11 @@ namespace Incompetence
         public Vector2 Position
         {
             get { return position; }
+        }
+
+        public Direction Direction
+        {
+            get { return direction; }
         }
 
         public int Radius
@@ -50,10 +56,36 @@ namespace Incompetence
             Vector2 tempPos = position;
 
             tempPos += moveDir * speed * dt;
+
             if (!Obstacle.didCollide(tempPos))
             {
                 position += moveDir * speed * dt;
             }
+
+            // Determine the direction of the monster
+            float playerX = playerPos.X;
+            float playerY = playerPos.Y;
+            float tempX = position.X;
+            float tempY = position.Y;
+
+            if (playerX > tempX)
+            {
+                //System.Diagnostics.Debug.WriteLine("Right");
+                direction = Direction.Right;
+            } else {
+                //System.Diagnostics.Debug.WriteLine("Left");
+                direction = Direction.Left;
+            }
+
+            if (playerY > tempY)
+            {
+                //System.Diagnostics.Debug.WriteLine("Down");
+                direction = Direction.Down;
+            } else {
+                //System.Diagnostics.Debug.WriteLine("Up");
+                direction = Direction.Up;
+            }
+
         }
     }
 

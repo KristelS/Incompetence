@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bomb.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bomb_sprite_sheet.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bombflash.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/FirstBaseMap.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/heart.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/maincharrunright.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/player.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/playerDown.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/playerLeft.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/playerRight.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/playerUp.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/potionBlue.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/potionGreen.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/potionRed.png</File>
+    <File>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/tutmonster.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

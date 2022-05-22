@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/jamjam/Incompetence/Content/FirstBaseMap.png</SourceFile>
-  <SourceTime>2022-05-20T23:43:02.2741476+03:00</SourceTime>
-  <DestFile>D:/jamjam/Incompetence/Content/bin/DesktopGL/FirstBaseMap.xnb</DestFile>
-  <DestTime>2022-05-21T12:22:30.1841437+03:00</DestTime>
+  <SourceFile>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/FirstBaseMap.png</SourceFile>
+  <SourceTime>2022-05-21T17:41:02.2153264+03:00</SourceTime>
+  <DestFile>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/FirstBaseMap.xnb</DestFile>
+  <DestTime>2022-05-21T18:41:03.439175+03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T19:17:54+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

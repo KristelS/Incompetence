@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/jamjam/Incompetence/Content/bombflash.png</SourceFile>
-  <SourceTime>2022-05-21T12:22:01.4358237+03:00</SourceTime>
-  <DestFile>D:/jamjam/Incompetence/Content/bin/DesktopGL/bombflash.xnb</DestFile>
-  <DestTime>2022-05-21T12:22:30.0803232+03:00</DestTime>
+  <SourceFile>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bombflash.png</SourceFile>
+  <SourceTime>2022-05-21T17:41:02.2437968+03:00</SourceTime>
+  <DestFile>C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/bombflash.xnb</DestFile>
+  <DestTime>2022-05-21T18:41:03.3531054+03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T19:17:54+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

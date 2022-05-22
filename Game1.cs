@@ -50,6 +50,7 @@ namespace Incompetence
         Texture2D playerUp;
         Texture2D playerLeft;
         Texture2D playerRight;
+        Texture2D heart;
 
         Texture2D potionRed;
         Texture2D potionBlue;
@@ -148,6 +149,13 @@ namespace Incompetence
 
 
 
+            heart = Content.Load<Texture2D>("heart");
+
+            Item.items.Add(new PotionRed(new Vector2(138, 68)));
+            Item.items.Add(new PotionBlue(new Vector2(170, 100)));
+            Item.items.Add(new PotionGreen(new Vector2(202, 200)));
+
+
             player.animation = player.animations[0];
         }
 
@@ -177,6 +185,19 @@ namespace Incompetence
             foreach (EnemyMonster enemy in EnemyMonster.enemies)
             {
                 enemy.Update(gameTime, player.Position);
+
+                // kasti suurused tuleb muuta vastavaks uuele karakterile
+                Rectangle personRectangle = new Rectangle((int)player.Position.X, (int)player.Position.Y, 32, 32);
+                Rectangle monsterRectangle = new Rectangle((int)enemy.Position.X - 16, (int)enemy.Position.Y - 16, 48, 48);
+
+                if (personRectangle.Intersects(monsterRectangle))
+                {
+                    // this is an amazing implementation of knockback
+                    player.isHit = true;
+                    player.hitDirection = enemy.Direction;
+                    
+                    player.Health--;
+                }
             }
 
             foreach (Projectile proj in Projectile.projectiles)
@@ -300,8 +321,7 @@ namespace Incompetence
                 else
                     spriteToDraw = potionRed;
 
-
-                _spriteBatch.Draw(spriteToDraw, enemy.Position, Color.White);
+                _spriteBatch.Draw(spriteToDraw, new Vector2(enemy.Position.X - 16, enemy.Position.Y - 16), Color.White);
             }
 
             foreach (Item it in Item.items)
@@ -328,7 +348,10 @@ namespace Incompetence
                 _spriteBatch.Draw(spriteToDraw, it.Position, Color.White);
             }
 
-
+            for (int i = 0; i < player.Health; i++)
+            {
+                _spriteBatch.Draw(heart, new Vector2(this.camera.Position.X - _graphics.PreferredBackBufferWidth / 2 + i * 45, this.camera.Position.Y - _graphics.PreferredBackBufferHeight / 2), Color.White);
+            }
 
             //to see the borders
 

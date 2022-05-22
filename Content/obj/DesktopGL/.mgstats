@@ -1,3 +1,21 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+
 "D:/jamjam/Incompetence/Content/main_left.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/main_left.xnb","TextureProcessor","Texture2DContent",1811,18517,0,1789494
 "D:/jamjam/Incompetence/Content/main_right.png","D:/jamjam/Incompetence/Content/bin/DesktopGL/main_right.xnb","TextureProcessor","Texture2DContent",1875,18517,0,0040626
+
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bomb.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/bomb.xnb","TextureProcessor","Texture2DContent",328,4181,0.1570414
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bomb_sprite_sheet.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/bomb_sprite_sheet.xnb","TextureProcessor","Texture2DContent",426,4181,0.0021967
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bombflash.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/bombflash.xnb","TextureProcessor","Texture2DContent",544,4181,0.0042432
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/FirstBaseMap.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/FirstBaseMap.xnb","TextureProcessor","Texture2DContent",203907,2457685,0.0850374
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/heart.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/heart.xnb","TextureProcessor","Texture2DContent",1289,4181,0.0036206
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/maincharrunright.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/maincharrunright.xnb","TextureProcessor","Texture2DContent",1766,16469,0.0031588
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/player.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/player.xnb","TextureProcessor","Texture2DContent",624,14469,0.003311
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/playerDown.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/playerDown.xnb","TextureProcessor","Texture2DContent",2162,147541,0.0108102
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/playerLeft.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/playerLeft.xnb","TextureProcessor","Texture2DContent",2105,147541,0.0081781
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/playerRight.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/playerRight.xnb","TextureProcessor","Texture2DContent",2072,147541,0.0056914
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/playerUp.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/playerUp.xnb","TextureProcessor","Texture2DContent",1954,147541,0.0080244
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/potionBlue.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/potionBlue.xnb","TextureProcessor","Texture2DContent",310,4181,0.0027117
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/potionGreen.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/potionGreen.xnb","TextureProcessor","Texture2DContent",293,4181,0.0024094
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/potionRed.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/potionRed.xnb","TextureProcessor","Texture2DContent",305,4181,0.0026724
+"C:/Users/Rainer/Desktop/Projects/Incompetence/Content/tutmonster.png","C:/Users/Rainer/Desktop/Projects/Incompetence/Content/bin/DesktopGL/tutmonster.xnb","TextureProcessor","Texture2DContent",1531,4181,0.0023909
+

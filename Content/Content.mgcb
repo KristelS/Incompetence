@@ -14,7 +14,7 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin aa.jpg
+#begin bomb.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -24,7 +24,8 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:aa.jpg
+/build:bomb.png
+
 
 #begin backgroundImage.png
 /importer:TextureImporter
@@ -51,16 +52,6 @@
 /build:biggerTutMap.png
 
 #begin bomb.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:bomb.png
 
 #begin bomb_sprite_sheet.png
 /importer:TextureImporter
@@ -85,6 +76,19 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:bombflash.png
+
+#begin FirstBaseMap.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:FirstBaseMap.png
+
 
 #begin controlsSplash.png
 /importer:TextureImporter
@@ -111,6 +115,9 @@
 /build:empty.png
 
 #begin FirstBaseMap.png
+
+#begin heart.png
+
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -120,7 +127,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:FirstBaseMap.png
+/build:heart.png
 
 #begin galleryFont.spritefont
 /importer:FontDescriptionImporter

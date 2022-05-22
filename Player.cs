@@ -11,9 +11,16 @@ namespace Incompetence
         private int speed = 200;
         private Direction direction = Direction.Down;
         private bool isMoving = false;
+
+        public bool isHit = false;
+        public Direction hitDirection;
+
         private int radius = 16;
+
         private KeyboardState kStateOld = Keyboard.GetState();
         public float cameraZoom = 2F;
+
+        private int health = 3;
 
         private static readonly TimeSpan intervalBetweenPressed1 = TimeSpan.FromMilliseconds(3000);
         private TimeSpan lastTimePressed;
@@ -21,7 +28,15 @@ namespace Incompetence
         public SpriteAnimation animation;
 
         public SpriteAnimation[] animations = new SpriteAnimation[5];
+       
         public Vector2 Position { get { return position; } }
+
+        public int Health
+        {
+            get { return health; }
+            set { health = value; }
+        }
+
         public int Radius { get { return radius; } }
         public void setX(float newX)
         {
@@ -36,6 +51,7 @@ namespace Incompetence
         {
 
             KeyboardState keyboardState = Keyboard.GetState();
+
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (keyboardState.IsKeyDown(Keys.G) && Game1.isGameStarted == false)
             {
@@ -133,7 +149,34 @@ namespace Incompetence
                     }
                 }
 
+            if (isHit)
 
+            {
+                switch (hitDirection)
+                {
+                    case Direction.Right:
+                        position.X -= 100;
+                        isHit = false;
+                        break;
+                    case Direction.Left:
+                        position.X += 100;
+                        isHit = false;
+                        break;
+                    case Direction.Up:
+                        position.Y -= 100;
+                        isHit = false;
+                        break;
+                    case Direction.Down:
+                        position.Y += 100;
+                        isHit = false;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            animation = animations[(int)direction];
+              
                 if (isMoving)
                 {
                     Vector2 tempPos = position;
