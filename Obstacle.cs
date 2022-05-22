@@ -11,6 +11,7 @@ namespace Incompetence
         protected int radius;
 
         public static List<Obstacle> obstacles = new List<Obstacle>();
+        public static List<Obstacle> treesBorders = new List<Obstacle>();
 
 
         public Vector2 Position { get { return position; } }
@@ -27,16 +28,19 @@ namespace Incompetence
         public static bool didCollide(Vector2 playerPos)
         {
             Rectangle personRectangle =
-                new Rectangle((int)playerPos.X, (int)playerPos.Y,
-                32, 32);
-            foreach (Obstacle o in Obstacle.obstacles)
+                new Rectangle((int)playerPos.X, (int)playerPos.Y + 16,
+                16, 16);
+            foreach (Obstacle o in Obstacle.treesBorders)
             {
                 Rectangle blockRectangle =
                     new Rectangle((int)o.Position.X + 16, (int)o.Position.Y + 16,
                     32, 32);
 
                 if (personRectangle.Intersects(blockRectangle))
+                {
+                    
                     return true;
+                }
 
             }
             return false;
@@ -44,18 +48,19 @@ namespace Incompetence
 
         public static void SpawnObstacles()
         {
-            Obstacle.obstacles.Add(new Border(new Vector2(1, 68)));
-            Obstacle.obstacles.Add(new Border(new Vector2(170, 68)));
-            Obstacle.obstacles.Add(new Border(new Vector2(202, 68)));
-            Obstacle.obstacles.Add(new Border(new Vector2(234, 68)));
-            Obstacle.obstacles.Add(new Border(new Vector2(266, 68)));
-            Obstacle.obstacles.Add(new Border(new Vector2(276, 68)));
-            Obstacle.obstacles.Add(new Border(new Vector2(276, 100)));
-            Obstacle.obstacles.Add(new Border(new Vector2(308, 100)));
-            Obstacle.obstacles.Add(new Border(new Vector2(308, 132)));
-            Obstacle.obstacles.Add(new Border(new Vector2(340, 132)));
-            Obstacle.obstacles.Add(new Border(new Vector2(340, 164)));
-            Obstacle.obstacles.Add(new Border(new Vector2(372, 164)));
+            Obstacle.obstacles.Add(new Tree(new Vector2(350 + 320, 200 + 320)));
+
+            Obstacle.obstacles.Add(new Tree2(new Vector2(384 - 40 + 320, 160 - 135 + 320)));
+            Obstacle.obstacles.Add(new Tree2(new Vector2(864 - 40 + 320, 352 - 135 + 320)));
+            Obstacle.obstacles.Add(new Tree2(new Vector2(800 - 40 + 320, 544 - 135 + 320)));
+            Obstacle.obstacles.Add(new Tree2(new Vector2(128 - 40 + 320, 576 - 135 + 320)));
+
+            Obstacle.obstacles.Add(new Tree(new Vector2(64 - 40 + 320, 160 - 135 + 320)));
+            Obstacle.obstacles.Add(new Tree(new Vector2(896 - 40 + 320, 160 - 135 + 320)));
+            Obstacle.obstacles.Add(new Tree(new Vector2(704 - 40 + 320, 512 - 135 + 320)));
+            Obstacle.obstacles.Add(new Tree(new Vector2(256 - 40 + 320, 544 - 135 + 320)));
+
+
         }
     }
 
@@ -64,6 +69,30 @@ namespace Incompetence
         public Border(Vector2 newPos) : base(newPos)
         {
             radius = 15;
+        }
+    }
+
+    class Tree : Obstacle
+    {
+        public Tree(Vector2 newPos) : base(newPos)
+        {
+
+        }
+    }
+
+    class Tree2 : Obstacle
+    {
+        public Tree2(Vector2 newPos) : base(newPos)
+        {
+
+        }
+    }
+
+    class Nothing : Obstacle
+    {
+        public Nothing(Vector2 newPos) : base(newPos)
+        {
+
         }
     }
 }
