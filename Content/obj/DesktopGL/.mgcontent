@@ -22,6 +22,7 @@
     <File>D:/jamjam/Incompetence/Content/maincharrunright.png</File>
     <File>D:/jamjam/Incompetence/Content/map2.png</File>
     <File>D:/jamjam/Incompetence/Content/mapfinal.png</File>
+    <File>D:/jamjam/Incompetence/Content/maphopefullyFinal.png</File>
     <File>D:/jamjam/Incompetence/Content/newTutBossBackground.png</File>
     <File>D:/jamjam/Incompetence/Content/player.png</File>
     <File>D:/jamjam/Incompetence/Content/playerDown.png</File>
@@ -44,6 +45,7 @@
     <File>D:/jamjam/Incompetence/Content/tutorialBoss.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

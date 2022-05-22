@@ -90,7 +90,7 @@ namespace Incompetence
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
 
-            tutorialBackgroundImg = Content.Load<Texture2D>("biggerTutMap");
+            tutorialBackgroundImg = Content.Load<Texture2D>("maphopefullyFinal");
             tutBossBackgroundImg = Content.Load<Texture2D>("newTutBossBackground");
 
             bombb = Content.Load<Texture2D>("bomb");

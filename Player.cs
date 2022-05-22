@@ -242,8 +242,8 @@ namespace Incompetence
                                             Teleport.teleports.Remove(tele);
                                             Game1.mapLevel = 2;
                                             ChangeMap();
-                                            setX(500);
-                                            setY(300);
+                                            setX(500+320);
+                                            setY(300+320);
                                             break;
                                         }
 
@@ -275,8 +275,8 @@ namespace Incompetence
                                             Teleport.teleports.Remove(tele);
                                             Game1.mapLevel = 2;
                                             ChangeMap();
-                                            setX(500);
-                                            setY(300);
+                                            setX(500+320);
+                                            setY(300+320);
                                             break;
                                         }
 
@@ -312,8 +312,8 @@ namespace Incompetence
                                             Teleport.teleports.Remove(tele);
                                             Game1.mapLevel = 2;
                                             ChangeMap();
-                                            setX(500);
-                                            setY(300);
+                                            setX(500+320);
+                                            setY(300+320);
                                             break;
                                         }
 
